@@ -1,0 +1,63 @@
+body {
+  color: brown;
+  background-color: #ffeaa7;
+  text-align: center;
+}
+
+h1 {
+  font-size: 80px;
+}
+.js-toDoList {
+  list-style-type: none;
+}
+
+.clicked {
+  color: red;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.form,
+.greetings {
+  display: none;
+  font-size: 50px;
+}
+
+.showing {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: fadeIn 2s linear;
+}
+
+li {
+  padding-bottom: 10px;
+  font-size: 50px;
+}
+
+li button {
+  font-size: 40px;
+}
+
+body .js-weather {
+  text-align: right;
+  font-size: 20px;
+}
