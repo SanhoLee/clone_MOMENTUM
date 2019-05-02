@@ -1,9 +1,29 @@
+// const TODOS_LS = "toDos";
+
+
 const form = document.querySelector(".js-form"),
     input = form.querySelector("input"),
     greeting = document.querySelector(".js-greetings");
 
 const USER_LS = "currentUser",
     SHOWING_ON = "showing";
+
+function delName(event){
+    const delBtn = event.target;
+    delBtn.remove();
+    localStorage.removeItem(USER_LS);
+
+    greeting.classList.remove(SHOWING_ON);
+    greeting.innerHTML = null;
+
+    form.classList.add(SHOWING_ON);
+    input.value = null;
+}
+
+
+function rstAll(event){
+    delName(event);
+}
 
 
 function paintGreeting(text){
@@ -12,7 +32,16 @@ function paintGreeting(text){
     // h4 태그에 걸어논 부분을 불러와서,적을 공간을 마련함.활성화
     greeting.classList.add(SHOWING_ON);
     // h4 엘레먼트 안에 인사말을 유저 이름에 맞게 작성해줌
-    greeting.innerText = `Hello ${text} !!`;
+    greeting.innerText = `Hello ${text} !!!!`;
+
+    const rstBtn = document.createElement("button");
+    
+    //이름 정보를 리셋하기 위한 작업
+    rstBtn.innerText = "RESET NAME!";
+    greeting.append("   ");
+    greeting.append(rstBtn);
+
+    rstBtn.addEventListener("click", rstAll);
 }
 
 function saveName(text){
@@ -54,7 +83,6 @@ function loadName(){
 
 function init(){
     loadName();
-
 }
 
 init();
