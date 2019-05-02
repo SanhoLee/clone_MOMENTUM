@@ -20,6 +20,11 @@ function delToDo(event) {
   // toDos가 const 변수 여서 재 할당 안됐었는데, let 형태로 바꿔져서 변경가능하게 만들어줌!!
   toDos = cleanToDos;
   saveToDos();
+
+  if (toDoList.childElementCount === 0) {
+    resetList.classList.remove(SHOWING_ON);
+  } else {
+  }
 }
 
 function loadToDos() {
@@ -44,7 +49,6 @@ function paintToDo(text) {
   const delBtn = document.createElement("button");
   const span = document.createElement("span");
   const newId = toDos.length + 1;
-  
 
   delBtn.innerText = "DEL";
   delBtn.addEventListener("click", delToDo);
