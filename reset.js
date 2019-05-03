@@ -10,10 +10,13 @@ function rmvList(){
 //toDos오브젝트는 어레이 자료형을 가지므로, 그 점을 이용하여, 하나씩 엘레먼트를 가져오면서 HTML상의 li엘레먼트를 삭제하여 모든 li요소를 삭제함.
 function delList(event) {
   //const delButn = event.target;
-  //toDos가 어레이 이므로, 리무브 함수 하나 만들고, forEach 실행!
+  //toDos가 어레이 이므로, 리무브 함수 하나 만들고, forEach 실행! html 요소 삭제
   toDos.forEach(rmvList);
+  //로컬스토리지의 데이터 삭제.
   localStorage.removeItem(TODOS_LS);
   resetList.classList.remove(SHOWING_ON);
+  //삭제후 다시 리스트 하나씩 입력후, 리프레쉬 하면 전에 리셋했던 데이터가 원인은 정확히 모르겠지만 살아 있어서 어레이 값을 초기화 시킴!
+  toDos = [];
 }
 
 //리스트 리셋 버튼 생성하고, 클릭 이벤트로 인해, delList함수를 반환!

@@ -20,6 +20,7 @@ function delName(event){
 
 function rstAll(event){
     delName(event);
+    delList(event);
 }
 
 
@@ -34,7 +35,7 @@ function paintGreeting(text){
     const rstBtn = document.createElement("button");
     
     //이름 정보를 리셋하기 위한 작업
-    rstBtn.innerText = "RESET NAME!";
+    rstBtn.innerText = "RESET All!";
     greeting.append("   ");
     greeting.append(rstBtn);
 

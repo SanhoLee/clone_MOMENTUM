@@ -1,17 +1,30 @@
+html {
+  font-size: 200%;
+  display: table;
+  margin: auto;
+  height: 100%;
+}
+
 body {
   color: brown;
   background-color: darkgray;
   text-align: center;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 h1 {
-  font-size: 80px;
+  /* font-size: 80px; */
+}
+
+.pos-middle {
+  position: relative;
 }
 .js-toDoList {
   list-style-type: none;
 }
 input {
-  font-size: 30px;
+  font-size: 100%;
 }
 .clicked {
   color: red;
@@ -25,7 +38,7 @@ input {
 .greetings,
 .delListBtn {
   display: none;
-  font-size: 50px;
+  font-size: 100%;
 }
 
 .showing {
@@ -46,21 +59,27 @@ input {
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  /* height: auto; */
   z-index: -1;
   animation: fadeIn 2s linear;
 }
 
 li {
   padding-bottom: 10px;
-  font-size: 50px;
+  /* font-size: 50px; */
 }
 
 button {
-  font-size: 30px;
+  font-size: 70%;
 }
 
 body .js-weather {
   text-align: right;
   font-size: 20px;
+}
+
+@media screen and (max-width: 800px){
+  body {
+    font-size: smaller;
+  }
 }

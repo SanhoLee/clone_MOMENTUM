@@ -23,6 +23,7 @@ function delToDo(event) {
 
   if (toDoList.childElementCount === 0) {
     resetList.classList.remove(SHOWING_ON);
+    localStorage.removeItem(TODOS_LS);
   } else {
   }
 }
@@ -54,6 +55,7 @@ function paintToDo(text) {
   delBtn.addEventListener("click", delToDo);
   span.innerText = text;
   li.appendChild(span);
+  li.append(" ");
   li.appendChild(delBtn);
   li.id = newId;
   toDoList.appendChild(li);
@@ -70,6 +72,7 @@ function handleSubmit(event) {
   const currentValue = toDoInput.value;
   paintToDo(currentValue);
   toDoInput.value = "";
+  resetList.classList.add(SHOWING_ON);
 }
 
 function init() {
