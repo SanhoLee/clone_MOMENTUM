@@ -1,25 +1,23 @@
 html {
   font-size: 200%;
-  display: table;
   margin: auto;
   height: 100%;
+  background-color: #2d3436;
+  display: table;
 }
 
 body {
-  color: brown;
-  background-color: darkgray;
+  color: ivory;
   text-align: center;
   display: table-cell;
   vertical-align: middle;
+  height: 500px;
 }
 
 h1 {
   /* font-size: 80px; */
 }
 
-.pos-middle {
-  position: relative;
-}
 .js-toDoList {
   list-style-type: none;
 }
@@ -59,9 +57,9 @@ input {
   top: 0;
   left: 0;
   width: 100%;
-  /* height: auto; */
+  height: 100%;
   z-index: -1;
-  animation: fadeIn 2s linear;
+  animation: fadeIn 1s linear;
 }
 
 li {
@@ -80,6 +78,11 @@ body .js-weather {
 
 @media screen and (max-width: 800px){
   body {
-    font-size: smaller;
+    font-size: x-small;
+    vertical-align: top;
+  }
+  .bgImage {
+    height: auto;
+
   }
 }
