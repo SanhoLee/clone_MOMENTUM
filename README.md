@@ -2,4 +2,4 @@
 
 Real time Clock, ToDoList, Weather
 
-## [Try here 🤙](sanholee.github.io/clone_momentum/)
+## [Try here 🤙](https://sanholee.github.io/clone_MOMENTUM/)
