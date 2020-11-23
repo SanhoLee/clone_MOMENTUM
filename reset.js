@@ -1,9 +1,8 @@
 const resetList = document.querySelector(".delListBtn");
 
-
 //리스트의 가장 먼저 적힌 li엘러먼트 한개를 삭제하는 기능!
-function rmvList(){
-  const listElm=toDoList.querySelector("li");
+function rmvList() {
+  const listElm = toDoList.querySelector("li");
   listElm.remove();
 }
 
@@ -23,7 +22,7 @@ function delList(event) {
 function paintResetBtn() {
   resetList.classList.add(SHOWING_ON);
   const delBtn = document.createElement("button");
-  delBtn.innerText = "Reset List!!";
+  delBtn.innerText = "RESET LIST";
   resetList.appendChild(delBtn);
   delBtn.addEventListener("click", delList);
 }
@@ -31,23 +30,18 @@ function paintResetBtn() {
 //초기 데이터 입력시 버튼을 생성하는 기능, 이벤트로 인해 버튼이 생성된 후 버튼데이터가 null이 아니기 때문에 중복 버튼 생성을 방지함
 function handleReset(event) {
   const resetChild = resetList.querySelector("button");
-  if(resetChild === null){
+  if (resetChild === null) {
     paintResetBtn();
-  }
-  else{
+  } else {
     console.log("already we have button!");
   }
-  
 }
 
-
 //이미 로컬스토리지에 리스트 데이터가 있는 경우, 새로고침에 의한 리셋 버튼 체크기능
-function chkbtn(){
-  
-  if (toDos.length !== 0 ) {
+function chkbtn() {
+  if (toDos.length !== 0) {
     paintResetBtn();
-  } 
-  else {
+  } else {
     console.log("there is no todos");
   }
 }

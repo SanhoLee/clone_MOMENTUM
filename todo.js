@@ -13,7 +13,7 @@ function delToDo(event) {
   const li = btn.parentNode;
   //li에 클릭 이벤트로 삭제하고자 하는 리스트의 id 정보가 전달되었으므로, 해당 데이터를 가지고, 원래 리스트의 html요소 li를 삭제함. 아직 로컬스토리지에는 리스트 정보가 있음.
   toDoList.removeChild(li);
-  const cleanToDos = toDos.filter(function(toDo) {
+  const cleanToDos = toDos.filter(function (toDo) {
     // li의 id 가 스트링으로 출력되는 것을 확인, 즉 아래의 li.id를 숫자로 바꿔준다!! console.log(toDo.id, li.id);
     return toDo.id !== parseInt(li.id);
   });
@@ -34,7 +34,7 @@ function loadToDos() {
     //로컬 스토리지에 스트링 형태로 저장된 데이터를 객체 형태로 다시 파스 해줌, JSON사용
     const parsedToDos = JSON.parse(loadedToDos);
     // 이제 데이터를 로컬스토리지에 저장했으니 해당 데이터를 페이지에 프린트 해줌
-    parsedToDos.forEach(function(toDo) {
+    parsedToDos.forEach(function (toDo) {
       paintToDo(toDo.text);
     });
   }
@@ -54,14 +54,14 @@ function paintToDo(text) {
   delBtn.innerText = "DEL";
   delBtn.addEventListener("click", delToDo);
   span.innerText = text;
-  li.appendChild(span);
-  li.append(" ");
   li.appendChild(delBtn);
+  li.append(" ");
+  li.appendChild(span);
   li.id = newId;
   toDoList.appendChild(li);
   const toDoObj = {
     text: text,
-    id: newId
+    id: newId,
   };
   toDos.push(toDoObj);
   saveToDos();

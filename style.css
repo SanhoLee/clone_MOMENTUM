@@ -1,11 +1,9 @@
 html {
-  font-size: 200%;
   margin: auto;
   height: 100%;
   background-color: #2d3436;
   display: table;
   color: ivory;
-
 }
 
 body {
@@ -15,29 +13,54 @@ body {
   height: 500px;
 }
 
+form {
+  width: 500px;
+  margin-bottom: 20px;
+}
+
+form input {
+  border-radius: 15px;
+  width: 100%;
+  font-size: 25px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input {
+  height: 50px;
+  padding-left: 10px;
+}
+
 h1 {
-  /* font-size: 80px; */
+  font-size: 90px;
+}
+h4 {
+  font-size: 25px;
+}
+
+#nameBox {
+  display: flex;
+  align-items: center;
+}
+
+#nameBox button {
+  margin-left: 10px;
 }
 
 .js-toDoList {
   list-style-type: none;
 }
-input {
-  font-size: 100%;
-}
 .clicked {
   color: red;
-}
-
-.btn {
-  cursor: pointer;
 }
 
 .form,
 .greetings,
 .delListBtn {
   display: none;
-  font-size: 100%;
+  /* font-size: 100%; */
 }
 
 .showing {
@@ -65,25 +88,45 @@ input {
 
 li {
   padding-bottom: 10px;
-  /* font-size: 50px; */
+  font-size: 25px;
+  display: flex;
+  align-items: center;
 }
 
 button {
-  font-size: 70%;
+  all: unset;
+  cursor: pointer;
+  background-color: white;
+  padding: 5px 3px;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+button:active {
+  transform: scale(0.8);
+}
+
+#writeToDoLine {
+  display: flex;
+  align-items: center;
 }
 
 body .js-weather {
   text-align: right;
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
   body {
     font-size: x-small;
     vertical-align: top;
   }
   .bgImage {
     height: auto;
-
   }
 }
