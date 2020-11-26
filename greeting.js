@@ -28,14 +28,16 @@ function paintGreeting(text) {
   // h4 태그에 걸어논 부분을 불러와서,적을 공간을 마련함.활성화
   greeting.classList.add(SHOWING_ON);
   // h4 엘레먼트 안에 인사말을 유저 이름에 맞게 작성해줌
-  greeting.innerText = `HELLO ${text} 😎 `;
 
-  const rstBtn = document.createElement("button");
+  const nameSpace = document.createElement("span");
+  nameSpace.innerText = `HELLO ${text} 😎 `;
 
   //이름 정보를 리셋하기 위한 작업
+  const rstBtn = document.createElement("button");
   rstBtn.innerText = "RESET";
-  greeting.append("   ");
-  greeting.append(rstBtn);
+
+  greeting.appendChild(rstBtn);
+  greeting.appendChild(nameSpace);
 
   rstBtn.addEventListener("click", rstAll);
 }
